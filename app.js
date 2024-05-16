@@ -1,11 +1,16 @@
 const fs = require("fs/promises");
-
+const {
+  CREATE_A_FILE,
+  DELETE_THE_FILE,
+  RENAME_THE_FILE,
+  ADD_TO_THE_FILE,
+} = require("./constant.js");
 (async () => {
   // watcher for command file changes
   const watcher = fs.watch("./command.txt");
 
   // file descriptors for command file (<FileHandle> objects)
-	// <FileHandle> inherits from <EventEmitter>
+  // <FileHandle> inherits from <EventEmitter>
   const commandFileHandler = await fs.open("./command.txt", "r");
 
   // observer
@@ -25,10 +30,25 @@ const fs = require("fs/promises");
       // write the file contents to the buffer based on the provided arguments
       await commandFileHandler.read(buffer, offset, length, position);
 
-			// decoding buffer based on utf8 encoding
+      // decoding buffer based on utf8 encoding
       const content = buffer.toString("utf-8");
 
-      console.log(content);
+      // console.log(content);
+
+      if (content.includes(CREATE_A_FILE)) {
+        console.log("deleted file");
+      }
+
+      if (content.includes(DELETE_THE_FILE)) {
+        console.log("deleted file");
+      }
+
+      if (content.includes(RENAME_THE_FILE)) {
+        console.log("deleted file");
+      }
+      if (content.includes(ADD_TO_THE_FILE)) {
+        console.log("deleted file");
+      }
     } catch (error) {
       throw new Error(error.message);
     }
