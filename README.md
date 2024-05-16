@@ -5,10 +5,10 @@ This Node.js application allows you to define file system operations within a te
 
 1. Inside the `command.txt` file, write instructions in the following format (one instruction per line):
 
-    - `create a file PATH`: Creates a new file with the specified `path`.
-    - `delete the file PATH`: Deletes the file at the provided `path`.
-    - `rename the file OLD-PATH NEW-PATH`: Rename the file from `oldPath` into `newPath`.
-    - `add to the file PATH CONTENT`: Add content to the provided path file.
+    - `create a file <PATH>`: Creates a new file with the specified `path`.
+    - `delete the file <PATH>`: Deletes the file at the provided `path`.
+    - `rename the file <OLD-PATH> to <NEW-PATH>`: Rename the file from `oldPath` into `newPath`.
+    - `add to the file <PATH> this content <CONTENT>`: Add content to the provided path file.
 
 3. Run the application using `node app.js`.
 

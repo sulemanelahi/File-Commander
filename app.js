@@ -20,19 +20,24 @@ const { readFile, createFile } = require("./operations");
     try {
       const command = await readFile(commandFileHandler);
 
+      // CREATE_A_FILE <path>
       if (command.includes(CREATE_A_FILE)) {
         const path = command.substring(CREATE_A_FILE.length + 1);
 
         await createFile(path);
       }
 
+      // DELETE_THE_FILE <path>
       if (command.includes(DELETE_THE_FILE)) {
         console.log("deleted file");
       }
 
+      // RENAME_THE_FILE <oldPath> to <newPath>
       if (command.includes(RENAME_THE_FILE)) {
         console.log("deleted file");
       }
+
+      // ADD_TO_THE_FILE <path> this content: <content>
       if (command.includes(ADD_TO_THE_FILE)) {
         console.log("deleted file");
       }
