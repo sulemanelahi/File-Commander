@@ -46,7 +46,12 @@ const { readFile, createFile } = require("./operations");
 
       // ADD_TO_THE_FILE <path> this content: <content>
       if (command.includes(ADD_TO_THE_FILE)) {
-        console.log("deleted file");
+        const text = " this content: ";
+        const indexOfText = command.indexOf(text);
+        const path = command.substring(ADD_TO_THE_FILE.length + 1, indexOfText);
+        const content = command.substring(indexOfText + text.length);
+
+				// await addContent(content, path)
       }
     } catch (error) {
       throw new Error(error.message);
