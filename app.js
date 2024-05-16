@@ -29,7 +29,9 @@ const { readFile, createFile } = require("./operations");
 
       // DELETE_THE_FILE <path>
       if (command.includes(DELETE_THE_FILE)) {
-        console.log("deleted file");
+        const path = command.substring(DELETE_THE_FILE.length + 1);
+
+        // await deleteFile(path);
       }
 
       // RENAME_THE_FILE <oldPath> to <newPath>
