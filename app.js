@@ -5,7 +5,7 @@ const {
   RENAME_THE_FILE,
   ADD_TO_THE_FILE,
 } = require("./constant.js");
-const { readFile, createFile, deleteFile } = require("./operations");
+const { readFile, createFile, deleteFile, renameFile } = require("./operations");
 
 (async () => {
   // watcher for command file changes
@@ -41,7 +41,7 @@ const { readFile, createFile, deleteFile } = require("./operations");
         const oldPath = command.substring(RENAME_THE_FILE.length + 1, indexOfText);
         const newPath = command.substring(indexOfText + 4);
 
-        // await renameFile(oldPath, newPath);
+        await renameFile(oldPath, newPath);
       }
 
       // ADD_TO_THE_FILE <path> this content: <content>

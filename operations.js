@@ -43,8 +43,16 @@ const deleteFile = async (path) => {
 
   console.log(`Deleting ${path}`);
 };
+
+const renameFile = async (oldPath, newPath) => {
+  await fs.rename(oldPath, newPath);
+
+  console.log(`Renamed ${oldPath} to ${newPath}`);
+};
+
 module.exports = {
   createFile,
   readFile,
-  deleteFile
+  deleteFile,
+  renameFile,
 };
