@@ -27,7 +27,7 @@ const createFile = async (path) => {
    .catch(() => false);
 
   if (isExist) {
-    throw new Error("File already exists");
+    throw new Error(`File ${path} already exists`);
   }
 
   await fs.open(path, "w");
