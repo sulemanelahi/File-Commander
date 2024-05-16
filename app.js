@@ -36,7 +36,12 @@ const { readFile, createFile } = require("./operations");
 
       // RENAME_THE_FILE <oldPath> to <newPath>
       if (command.includes(RENAME_THE_FILE)) {
-        console.log("deleted file");
+        const text = " to ";
+        const indexOfText = command.indexOf(text);
+        const oldPath = command.substring(RENAME_THE_FILE.length + 1, indexOfText);
+        const newPath = command.substring(indexOfText + 4);
+
+        // await renameFile(oldPath, newPath);
       }
 
       // ADD_TO_THE_FILE <path> this content: <content>
