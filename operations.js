@@ -33,6 +33,8 @@ const createFile = async (path) => {
 
   const newFileHandler = await fs.open(path, "w");
 
+  console.log(`New file ${path} successfully created`);
+
   newFileHandler.close();
 };
 
