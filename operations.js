@@ -39,12 +39,12 @@ const createFile = async (path) => {
 };
 
 const deleteFile = async (path) => {
-	await fs.unlink(path);
-	console.log(`Deleting ${path}`);
-};
+  await fs.unlink(path);
 
+  console.log(`Deleting ${path}`);
+};
 module.exports = {
   createFile,
   readFile,
-	deleteFile
+  deleteFile
 };
