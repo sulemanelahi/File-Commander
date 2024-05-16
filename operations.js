@@ -38,7 +38,13 @@ const createFile = async (path) => {
   newFileHandler.close();
 };
 
+const deleteFile = async (path) => {
+	await fs.unlink(path);
+	console.log(`Deleting ${path}`);
+};
+
 module.exports = {
   createFile,
   readFile,
+	deleteFile
 };
