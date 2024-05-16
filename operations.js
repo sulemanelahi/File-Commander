@@ -21,6 +21,19 @@ const readFile = async (commandFileHandler) => {
   return command;
 };
 
+const createFile = async (path) => {
+	const isExist = await fs.stat(path)
+   .then(() => true)
+   .catch(() => false);
+
+  if (isExist) {
+    throw new Error("File already exists");
+  }
+
+  await fs.open(path, "w");
+};
+
 module.exports = {
+  createFile,
   readFile,
 };
