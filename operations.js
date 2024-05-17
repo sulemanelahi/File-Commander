@@ -50,9 +50,20 @@ const renameFile = async (oldPath, newPath) => {
   console.log(`Renamed ${oldPath} to ${newPath}`);
 };
 
+const addContent = async (content, path) => {
+  const fileHandler = await fs.open(path, "a");
+
+  fileHandler.write(content);
+
+  console.log(`Added ${content} into ${path}`);
+
+  fileHandler.close();
+};
+
 module.exports = {
   createFile,
   readFile,
   deleteFile,
   renameFile,
+  addContent,
 };
